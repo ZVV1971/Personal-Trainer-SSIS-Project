@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Personal Trainer SSIS Project", "Personal Trainer SSIS Project\Personal Trainer SSIS Project.dtproj", "{3D6D9753-DD6C-422C-A9C5-B45CBCC07B24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D6D9753-DD6C-422C-A9C5-B45CBCC07B24}.Development|Default.ActiveCfg = Development
+		{3D6D9753-DD6C-422C-A9C5-B45CBCC07B24}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C2BA54A-BD54-4413-98A7-58C2EECEFC09}
+	EndGlobalSection
+EndGlobal
