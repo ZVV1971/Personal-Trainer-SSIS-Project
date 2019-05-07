@@ -1,0 +1,90 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2019 5:20:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{DC612E7A-E510-42E3-9E7B-8E208C69AE80}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson16"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{D51CA838-4EBB-456B-A270-13E7BD4F6C4C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationFolder]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{36789A6B-378C-4A56-A161-1C36A5F8B47C}"
+      DTS:ObjectName="DestinationFolder">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="2"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Диспетчер FTP-сеансов]"
+      DTS:CreationName="FTP"
+      DTS:DTSID="{0484ABE1-EE4C-4E16-BA60-E6D0B6004E4F}"
+      DTS:ObjectName="Диспетчер FTP-сеансов">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="213.184.224.229:21">
+          <DTS:FtpConnection
+            DTS:ServerName="213.184.224.229"
+            DTS:ServerUserName="anonymous">
+            <DTS:Property
+              DTS:Name="ServerPassword"
+              Sensitive="1"
+              Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkrBIA/kevUeebDGhzRlrXQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB3YlPqIFmHyp9QcceK7FMB3QTJOR1uBiLcRHubgc6ATwAAAAAOgAAAAAIAACAAAACipX4bk+NaKqZsnnv76AAdVc96tQGTXiiZsW70hw+odxAAAAC5aTtu5sSNTkr/o1c1/GkRQAAAAAqCcn6V3/OTYc9l2ZJpaYn0PaM3FHGOkHL1JhMxtfu6RmFNler25W0x5pP3UqFqQImY52AaQU/d7k3Wgo7YUyk</DTS:Property>
+          </DTS:FtpConnection>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Задача &quot;FTP&quot;"
+      DTS:CreationName="Microsoft.FtpTask"
+      DTS:Description="Задача &quot;FTP&quot;"
+      DTS:DTSID="{830E6D71-B152-4DFF-B1C2-CCEB0949EA12}"
+      DTS:ExecutableType="Microsoft.FtpTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача &quot;FTP&quot;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FtpData
+          ConnectionName="{0484ABE1-EE4C-4E16-BA60-E6D0B6004E4F}"
+          TaskOperationType="Receive"
+          TaskLocalPath="DestinationFolder" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="143,42"
+          Id="Package\Задача &quot;FTP&quot;"
+          TopLeft="235,128" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

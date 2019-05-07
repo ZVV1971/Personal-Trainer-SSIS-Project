@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/6/2019 4:44:34 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{9FCDC35C-B630-4C38-A315-BA0E49EFD925}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson15"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{BDF89601-E021-45D1-8A0C-E178FB82563E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SMTP at Mail.tut.by for KML]"
+      DTS:CreationName="SMTP"
+      DTS:DTSID="{8F3ED92A-2AD1-4CD5-B120-65EC912B9E04}"
+      DTS:ObjectName="SMTP at Mail.tut.by for KML">
+      <DTS:ObjectData>
+        <SmtpConnectionManager
+          ConnectionString="SmtpServer=smtp.yandex.ru::465;UseWindowsAuthentication=False;EnableSsl=True;Timeout=5000;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Задача &quot;Отправка почты&quot;"
+      DTS:CreationName="Microsoft.SendMailTask"
+      DTS:Description="Задача &quot;Отправка почты&quot;"
+      DTS:DTSID="{1C4B6809-06E0-46B2-812A-3D03740D4AAE}"
+      DTS:ExecutableType="Microsoft.SendMailTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача &quot;Отправка почты&quot;"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SendMailTask:SendMailTaskData
+          SendMailTask:SMTPServer="{8F3ED92A-2AD1-4CD5-B120-65EC912B9E04}"
+          SendMailTask:From="kml_metal@tut.by"
+          SendMailTask:To="v.v.zakharenkov@gmail.com"
+          SendMailTask:Subject="Tst"
+          SendMailTask:MessageSource="TEst" xmlns:SendMailTask="www.microsoft.com/sqlserver/dts/tasks/sendmailtask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Задача &quot;Отправка почты&quot;"
+          TopLeft="166,224" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
