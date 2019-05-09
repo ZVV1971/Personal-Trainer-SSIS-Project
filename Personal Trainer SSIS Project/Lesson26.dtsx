@@ -1,0 +1,679 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2019 5:26:26 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{2F3881BD-4029-4ABC-9A6C-59757F5452BD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson26"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{710E17CF-97C0-419D-806B-F7D0B3E00A0A}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7794170B-47C5-41BC-905D-A448E4FACDD2}"
+      DTS:ObjectName="AW2012Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=win-oc0su9gc7ii\sqlexpress;Initial Catalog=e:\IIT\Projects\SSIS\AdventureWorksDW2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson26FlatFileConnection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{590B3151-E885-4D4C-A4D1-57DE6D7D01C2}"
+      DTS:ObjectName="Lesson26FlatFileConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson26FlatFileDestination.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductKey"
+              DTS:DTSID="{E1CAA973-8865-49F4-814E-3B0722A2FEF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SalesAmount"
+              DTS:DTSID="{3446340C-A970-4566-A514-6BF221D3A4BC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Lesson 26 Union All"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{3A543E68-A832-43FD-A6E5-5FA17F0ACC8F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson 26 Union All">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson 26 Union All\InternetSales"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="InternetSales"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT ProductKey, SalesAmount
+FROM FactInternetSales</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson 26 Union All\InternetSales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductKey]"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson 26 Union All\ResellerSales"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="ResellerSales"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT ProductKey, SalesAmount
+FROM FactResellerSales</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson 26 Union All\ResellerSales.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductKey]"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      name="ProductKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      name="SalesAmount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson 26 Union All\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Объединяет строки из нескольких потоков данных без сортировки. Пример: добавление строк назад в поток данных после исправления ошибок. Если сортировка имеет значение, рекомендуется использовать преобразование &quot;Слияние&quot;."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Lesson 26 Union All\Union All.Inputs[Union All Вход 1]"
+                  name="Union All Вход 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Inputs[Union All Вход 1].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[ProductKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Inputs[Union All Вход 1].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Lesson 26 Union All\Union All.Inputs[Входные данные 1 Union All]"
+                  hasSideEffects="true"
+                  name="Входные данные 1 Union All">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Inputs[Входные данные 1 Union All].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductKey]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[ProductKey]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Inputs[Входные данные 1 Union All].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      lineageId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;].Columns[SalesAmount]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[SalesAmount]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Lesson 26 Union All\Union All.Inputs[Входные данные 2 Union All]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Входные данные 2 Union All">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1]"
+                  name="Union All Выход 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[ProductKey]"
+                      dataType="i4"
+                      lineageId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[ProductKey]"
+                      name="ProductKey" />
+                    <outputColumn
+                      refId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[SalesAmount]"
+                      dataType="cy"
+                      lineageId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[SalesAmount]"
+                      name="SalesAmount" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="Назначение &quot;Неструктурированный файл&quot;">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson26FlatFileConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson26FlatFileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[ProductKey]"
+                      cachedDataType="i4"
+                      cachedName="ProductKey"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductKey]"
+                      lineageId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[ProductKey]" />
+                    <inputColumn
+                      refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[SalesAmount]"
+                      cachedDataType="cy"
+                      cachedName="SalesAmount"
+                      externalMetadataColumnId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[SalesAmount]"
+                      lineageId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1].Columns[SalesAmount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductKey]"
+                      dataType="i4"
+                      name="ProductKey" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[SalesAmount]"
+                      dataType="cy"
+                      name="SalesAmount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson 26 Union All.Paths[Union All Выход 1]"
+              endId="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Union All Выход 1"
+              startId="Package\Lesson 26 Union All\Union All.Outputs[Union All Выход 1]" />
+            <path
+              refId="Package\Lesson 26 Union All.Paths[Выход источника &quot;OLE DB&quot;1]"
+              endId="Package\Lesson 26 Union All\Union All.Inputs[Входные данные 1 Union All]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson 26 Union All\ResellerSales.Outputs[Выход источника &quot;OLE DB&quot;]" />
+            <path
+              refId="Package\Lesson 26 Union All.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Lesson 26 Union All\Union All.Inputs[Union All Вход 1]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson 26 Union All\InternetSales.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Lesson 26 Union All"
+          TopLeft="34.5,7.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Lesson 26 Union All">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Lesson 26 Union All\Union All"
+          TopLeft="148,191" />
+        <NodeLayout
+          Size="141,42"
+          Id="Package\Lesson 26 Union All\InternetSales"
+          TopLeft="46,52" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Lesson 26 Union All\ResellerSales"
+          TopLeft="258,55" />
+        <EdgeLayout
+          Id="Package\Lesson 26 Union All.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="116.5,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="73.1666666666667,97"
+              Start="0,0"
+              End="73.1666666666667,89.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.4404567699837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,53.4404567699837"
+                    Point2="0,57.4404567699837"
+                    Point3="4,57.4404567699837" />
+                  <mssgle:LineSegment
+                    End="69.1666666666667,57.4404567699837" />
+                  <mssgle:CubicBezierSegment
+                    Point1="69.1666666666667,57.4404567699837"
+                    Point2="73.1666666666667,57.4404567699837"
+                    Point3="73.1666666666667,61.4404567699837" />
+                  <mssgle:LineSegment
+                    End="73.1666666666667,89.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lesson 26 Union All.Paths[Выход источника &quot;OLE DB&quot;1]"
+          TopLeft="328,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-100.666666666667,94"
+              Start="0,0"
+              End="-100.666666666667,86.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,51.6639477977161" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,51.6639477977161"
+                    Point2="0,55.6639477977161"
+                    Point3="-4,55.6639477977161" />
+                  <mssgle:LineSegment
+                    End="-96.6666666666667,55.6639477977161" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-96.6666666666667,55.6639477977161"
+                    Point2="-100.666666666667,55.6639477977161"
+                    Point3="-100.666666666667,59.6639477977161" />
+                  <mssgle:LineSegment
+                    End="-100.666666666667,86.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Lesson 26 Union All\Назначение &quot;Неструктурированный файл&quot;"
+          TopLeft="112,318" />
+        <EdgeLayout
+          Id="Package\Lesson 26 Union All.Paths[Union All Выход 1]"
+          TopLeft="208.5,233">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="47.5,85"
+              Start="0,0"
+              End="47.5,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="4,42.5" />
+                  <mssgle:LineSegment
+                    End="43.5,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="43.5,42.5"
+                    Point2="47.5,42.5"
+                    Point3="47.5,46.5" />
+                  <mssgle:LineSegment
+                    End="47.5,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson 26 Union All\InternetSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson 26 Union All\ResellerSales">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -64,6 +64,71 @@
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">
+          <Name>Lesson20.dtsx</Name>
+          <FullPath>Lesson20.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson21.dtsx</Name>
+          <FullPath>Lesson21.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson22.dtsx</Name>
+          <FullPath>Lesson22.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson23.dtsx</Name>
+          <FullPath>Lesson23.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson24.dtsx</Name>
+          <FullPath>Lesson24.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson25.dtsx</Name>
+          <FullPath>Lesson25.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson26.dtsx</Name>
+          <FullPath>Lesson26.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson27.dtsx</Name>
+          <FullPath>Lesson27.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson28.dtsx</Name>
+          <FullPath>Lesson28.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson29.dtsx</Name>
+          <FullPath>Lesson29.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson30.dtsx</Name>
+          <FullPath>Lesson30.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson31.dtsx</Name>
+          <FullPath>Lesson31.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson32.dtsx</Name>
+          <FullPath>Lesson32.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
           <Name>Lesson6.dtsx</Name>
           <FullPath>Lesson6.dtsx</FullPath>
           <References />
@@ -88,7 +153,13 @@
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
         <TargetServerVersion>SQLServer2016</TargetServerVersion>
-        <ParameterConfigurationValues />
+        <ParameterConfigurationValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2019-05-09T15:25:16.7691101Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationValues>
       </Options>
     </Configuration>
   </Configurations>

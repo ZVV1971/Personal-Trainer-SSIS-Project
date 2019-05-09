@@ -1,0 +1,1453 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2019 7:19:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{E04F38E7-FBE4-438D-8D91-59E3B71798F5}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson28"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{5F1A7F4D-7BD7-475B-82D0-A03DCB3F4239}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012DWConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D2536146-F591-4E9A-947C-D6318D42D1E9}"
+      DTS:ObjectName="AW2012DWConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=WIN-OC0SU9GC7II\SQLEXPRESS;Initial Catalog=e:\IIT\Projects\SSIS\AdventureWorksDW2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson28C1MailingList]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FF9E817D-EEB0-4B84-8252-358E912E9625}"
+      DTS:ObjectName="Lesson28C1MailingList">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson28C1MailingList.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{A9A06064-3DB5-4385-ACCA-7584796308E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{0B1CB3CF-6C3B-4E1E-9245-29FFC7E4350B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MiddleName"
+              DTS:DTSID="{2E14A240-CCE9-483E-B8CA-42CBEBC0DFFA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{3120D43A-2D05-4E79-8650-156F5230A5F5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{3FC67777-C856-4D7B-8D37-0877B599C9E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="120"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddressLine1"
+              DTS:DTSID="{6C7A1A55-87C4-4CCA-93AD-40658431EAED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="120"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddressLine2"
+              DTS:DTSID="{828C380C-51E5-45ED-AAC0-2A159E7CAD83}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{84192FAA-EAF8-42E6-8E3B-C05C83A5F6D3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceCode"
+              DTS:DTSID="{4D48AE11-6747-4ADD-BE5A-FFC59BC920EE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostalCode"
+              DTS:DTSID="{D4805CEB-8873-4C4B-87BB-A8634034D557}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson28C2MailingList]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{4699799A-159A-49FB-AD79-633A8A2373FC}"
+      DTS:ObjectName="Lesson28C2MailingList">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson28C2MailingList.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="8"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{C958EF05-AC9B-4253-AA0E-5D4BF700461D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FirstName"
+              DTS:DTSID="{A7AF7623-BC26-4D2E-AA46-4A7270A3004F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="MiddleName"
+              DTS:DTSID="{2A47800E-8C60-4128-AC19-472B540A606C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastName"
+              DTS:DTSID="{EA8BFAE3-ACFB-4535-9E52-A06B5ADF5C9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EmailAddress"
+              DTS:DTSID="{7D443E8F-CFF7-42E5-93AE-E23AFE80A3C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="120"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddressLine1"
+              DTS:DTSID="{25B9888D-0FE5-4A9F-99CB-B438E8FD98D5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="120"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AddressLine2"
+              DTS:DTSID="{C0A9EA8C-F51A-4BF0-80C9-ADBA4338E626}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{63D3B375-688C-4926-83E2-BB297EEA6ACF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="StateProvinceCode"
+              DTS:DTSID="{D1B41190-C1C1-48A0-A156-21E648DEC957}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostalCode"
+              DTS:DTSID="{314A0230-9745-44F5-ADA5-0FC551552922}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Lesson28 DataFlowTask"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{E75D5FD3-F170-4304-A511-46A6E29948FC}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson28 DataFlowTask">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="Campaign1 Mailing List">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson28C1MailingList]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson28C1MailingList]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Title]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[MiddleName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[AddressLine1]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine1"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine1]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine1]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[AddressLine2]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine2"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine2]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine2]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Phone]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[StateProvinceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[StateProvinceCode]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[PostalCode]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[PostalCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="StateProvinceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="Campaign2 Mailing List">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson28C2MailingList]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson28C2MailingList]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Title]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[MiddleName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MiddleName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[EmailAddress]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[AddressLine1]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine1"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine1]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine1]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[AddressLine2]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine2"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine2]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine2]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Phone]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[StateProvinceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[StateProvinceCode]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]" />
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[PostalCode]"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[PostalCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="StateProvinceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Lesson28 DataFlowTask\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Объединяет строки из нескольких потоков данных без сортировки. Пример: добавление строк назад в поток данных после исправления ошибок. Если сортировка имеет значение, рекомендуется использовать преобразование &quot;Слияние&quot;."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1]"
+                  name="Union All Вход 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="8"
+                      cachedName="Title"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Title]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Title]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[FirstName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="FirstName"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[FirstName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[MiddleName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="MiddleName"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MiddleName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[MiddleName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[LastName]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="LastName"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[LastName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[EmailAddress]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="EmailAddress"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[EmailAddress]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[EmailAddress]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[AddressLine1]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine1"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine1]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine1]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[AddressLine2]"
+                      cachedDataType="wstr"
+                      cachedLength="120"
+                      cachedName="AddressLine2"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine2]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine2]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[Phone]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Phone"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Phone]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Phone]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[StateProvinceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[StateProvinceCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1].Columns[PostalCode]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="PostalCode"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[PostalCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="ID журнала преобразований выходного столбца"
+                          name="OutputColumnLineageID">#{Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[PostalCode]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Lesson28 DataFlowTask\Union All.Inputs[Входные данные 1 Union All]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Входные данные 1 Union All">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1]"
+                  name="Union All Выход 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[EmailAddress]"
+                      name="EmailAddress" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine1]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine1]"
+                      name="AddressLine1" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine2]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[AddressLine2]"
+                      name="AddressLine2" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[StateProvinceCode]"
+                      name="StateProvinceCode" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Lesson28 DataFlowTask\Union All.Outputs[Union All Выход 1].Columns[PostalCode]"
+                      name="PostalCode" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Источник &quot;OLE DB&quot;"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        Title, FirstName, MiddleName, LastName, EmailAddress, AddressLine1, AddressLine2, Phone
+, StateProvinceCode, PostalCode
+FROM            DimCustomer AS DC
+INNER JOIN DimGeography AS DG
+ON DC.GeographyKey = DG.GeographyKey</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012DWConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012DWConnection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Title]"
+                      length="8"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[FirstName]"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      name="FirstName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MiddleName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[MiddleName]"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MiddleName]"
+                      name="MiddleName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LastName]"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LastName]"
+                      name="LastName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[EmailAddress]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[EmailAddress]"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[EmailAddress]"
+                      name="EmailAddress"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine1]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[AddressLine1]"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine1]"
+                      name="AddressLine1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine2]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[AddressLine2]"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[AddressLine2]"
+                      name="AddressLine2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Phone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Phone]"
+                      length="20"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[StateProvinceCode]"
+                      length="3"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]"
+                      name="StateProvinceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[PostalCode]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[PostalCode]"
+                      length="15"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[PostalCode]"
+                      name="PostalCode"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      name="FirstName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      name="MiddleName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      name="LastName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      name="EmailAddress" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[AddressLine1]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine1" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[AddressLine2]"
+                      dataType="wstr"
+                      length="120"
+                      name="AddressLine2" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      name="StateProvinceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      name="PostalCode" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Title]"
+                      dataType="wstr"
+                      length="8"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[FirstName]"
+                      name="FirstName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[MiddleName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[MiddleName]"
+                      name="MiddleName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LastName]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LastName]"
+                      name="LastName" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[EmailAddress]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[EmailAddress]"
+                      name="EmailAddress" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[AddressLine1]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[AddressLine1]"
+                      name="AddressLine1" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[AddressLine2]"
+                      dataType="wstr"
+                      length="120"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[AddressLine2]"
+                      name="AddressLine2" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Phone]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[StateProvinceCode]"
+                      dataType="wstr"
+                      length="3"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[StateProvinceCode]"
+                      name="StateProvinceCode" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[PostalCode]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[PostalCode]"
+                      name="PostalCode" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson28 DataFlowTask\Условное разбиение"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Условное разбиение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+              description="Распределяет строки данных по разным выходам в зависимости от содержимого данных. Используйте условие (выражения SSIS), чтобы указать распределяемые строки. Пример: разделение записей, которые необходимо очистить, от подготовленных к загрузке или распределение только подмножества записей."
+              name="Условное разбиение"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]"
+                  description="Ввод преобразования &quot;Условное разбиение&quot;"
+                  name="Вход условного разбиения">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения].Columns[StateProvinceCode]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="StateProvinceCode"
+                      lineageId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[StateProvinceCode]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Campaign1]"
+                  description="Вывод 2 преобразования &quot;Условное разбиение&quot;"
+                  errorOrTruncationOperation="Вычисление"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Campaign1"
+                  synchronousInputId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Указывает выражение. Версия этого выражения использует вместо имен столбцов идентификаторы журнала обращений и преобразований."
+                      name="Expression">#{Package\Lesson28 DataFlowTask\Источник "OLE DB".Outputs[Выход источника "OLE DB"].Columns[StateProvinceCode]} == "FL" || #{Package\Lesson28 DataFlowTask\Источник "OLE DB".Outputs[Выход источника "OLE DB"].Columns[StateProvinceCode]} == "GA"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает понятную версию выражения. Эта версия выражения использует имена столбцов."
+                      expressionType="Notify"
+                      name="FriendlyExpression">StateProvinceCode == "FL" || StateProvinceCode == "GA"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает положение условия в списке условий, который вычисляется преобразованием. Вычисление производится в порядке от меньшего к большему значению."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Campaign2]"
+                  description="Вывод 2 преобразования &quot;Условное разбиение&quot;"
+                  errorOrTruncationOperation="Вычисление"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Campaign2"
+                  synchronousInputId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Указывает выражение. Версия этого выражения использует вместо имен столбцов идентификаторы журнала обращений и преобразований."
+                      name="Expression">#{Package\Lesson28 DataFlowTask\Источник "OLE DB".Outputs[Выход источника "OLE DB"].Columns[StateProvinceCode]} == "CA" || #{Package\Lesson28 DataFlowTask\Источник "OLE DB".Outputs[Выход источника "OLE DB"].Columns[StateProvinceCode]} == "WA"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает понятную версию выражения. Эта версия выражения использует имена столбцов."
+                      expressionType="Notify"
+                      name="FriendlyExpression">StateProvinceCode == "CA" || StateProvinceCode == "WA"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает положение условия в списке условий, который вычисляется преобразованием. Вычисление производится в порядке от меньшего к большему значению."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[DefaultOutput]"
+                  description="Выход по умолчанию преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  name="DefaultOutput"
+                  synchronousInputId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Вывод ошибок условного разбиения]"
+                  description="Вывод ошибок преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок условного разбиения"
+                  synchronousInputId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson28 DataFlowTask.Paths[Campaign1]"
+              endId="Package\Lesson28 DataFlowTask\Campaign1 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Campaign1"
+              startId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Campaign1]" />
+            <path
+              refId="Package\Lesson28 DataFlowTask.Paths[Campaign2]"
+              endId="Package\Lesson28 DataFlowTask\Campaign2 Mailing List.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Campaign2"
+              startId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[Campaign2]" />
+            <path
+              refId="Package\Lesson28 DataFlowTask.Paths[DefaultOutput]"
+              endId="Package\Lesson28 DataFlowTask\Union All.Inputs[Union All Вход 1]"
+              name="DefaultOutput"
+              startId="Package\Lesson28 DataFlowTask\Условное разбиение.Outputs[DefaultOutput]" />
+            <path
+              refId="Package\Lesson28 DataFlowTask.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Lesson28 DataFlowTask\Условное разбиение.Inputs[Вход условного разбиения]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Lesson28 DataFlowTask"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Lesson28 DataFlowTask">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Lesson28 DataFlowTask\Условное разбиение"
+          TopLeft="186,216" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;"
+          TopLeft="194,45" />
+        <EdgeLayout
+          Id="Package\Lesson28 DataFlowTask.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="278.25,87">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,129"
+              Start="0,0"
+              End="0,121.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,121.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Lesson28 DataFlowTask\Campaign1 Mailing List"
+          TopLeft="88,315" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Lesson28 DataFlowTask\Campaign2 Mailing List"
+          TopLeft="381,315" />
+        <EdgeLayout
+          Id="Package\Lesson28 DataFlowTask.Paths[Campaign1]"
+          TopLeft="247.333333333333,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-65.8333333333333,57"
+              Start="0,0"
+              End="-65.8333333333333,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1013215859031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1013215859031"
+                    Point2="0,23.1013215859031"
+                    Point3="-4,23.1013215859031" />
+                  <mssgle:LineSegment
+                    End="-61.8333333333333,23.1013215859031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-61.8333333333333,23.1013215859031"
+                    Point2="-65.8333333333333,23.1013215859031"
+                    Point3="-65.8333333333333,27.1013215859031" />
+                  <mssgle:LineSegment
+                    End="-65.8333333333333,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-57.9997526041667,28.1013215859031,50.166171875,11.4677734375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lesson28 DataFlowTask.Paths[Campaign2]"
+          TopLeft="304.666666666667,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169.833333333333,57"
+              Start="0,0"
+              End="169.833333333333,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1013215859031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1013215859031"
+                    Point2="0,23.1013215859031"
+                    Point3="4,23.1013215859031" />
+                  <mssgle:LineSegment
+                    End="165.833333333333,23.1013215859031" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165.833333333333,23.1013215859031"
+                    Point2="169.833333333333,23.1013215859031"
+                    Point3="169.833333333333,27.1013215859031" />
+                  <mssgle:LineSegment
+                    End="169.833333333333,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="59.6480338541667,28.1013215859031,50.537265625,11.4873046875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121,42"
+          Id="Package\Lesson28 DataFlowTask\Union All"
+          TopLeft="509,200" />
+        <EdgeLayout
+          Id="Package\Lesson28 DataFlowTask.Paths[DefaultOutput]"
+          TopLeft="366,237">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="143,-16"
+              Start="0,0"
+              End="135.5,-16">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="67.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,0"
+                    Point2="71.5,0"
+                    Point3="71.5,-4" />
+                  <mssgle:LineSegment
+                    End="71.5,-12" />
+                  <mssgle:CubicBezierSegment
+                    Point1="71.5,-12"
+                    Point2="71.5,-16"
+                    Point3="75.5,-16" />
+                  <mssgle:LineSegment
+                    End="135.5,-16" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="39.80861328125,1,63.3827734375,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson28 DataFlowTask\Источник &quot;OLE DB&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

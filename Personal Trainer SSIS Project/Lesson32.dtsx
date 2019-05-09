@@ -1,0 +1,610 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/9/2019 6:00:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{118B1F99-FED7-4939-A612-DBEE1039FCCB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson32"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{730BE5D6-57F8-42B0-9026-1250F5C7B367}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F7848B30-17C8-4A35-8398-35E9CB6EC3AE}"
+      DTS:ObjectName="AW2012Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=win-oc0su9gc7ii\sqlexpress;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson32FlatFileConnection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{39BEE982-81C0-47A1-9816-86FF030C1985}"
+      DTS:ObjectName="Lesson32FlatFileConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1049"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1251"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson32FlatFile.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 0"
+              DTS:DTSID="{2EFB861B-BAE0-412E-86DC-4596CC99EFDF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="256"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 1"
+              DTS:DTSID="{66EC0DC1-48B0-4E11-BA8C-9E6522F60CA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 2"
+              DTS:DTSID="{26869FE3-AD42-44DE-AFD1-C2DE026D0D91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 3"
+              DTS:DTSID="{45AFE03A-635B-4D67-B119-0E0AC22EB531}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 4"
+              DTS:DTSID="{BFC3D078-CFAC-4011-81ED-B278C325D924}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 5"
+              DTS:DTSID="{0B9E825C-F1DF-4AFC-AFC8-FB58F9E37689}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 6"
+              DTS:DTSID="{4D81CF60-B2CE-4C01-AB1A-AA61F7EC2302}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 7"
+              DTS:DTSID="{0B5CD6BD-F826-41FC-B0BB-FFE0C32CB032}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F8D5BBA-A986-4259-A8D6-194AAF02340A}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intOrgLevel">
+      <DTS:VariableValue
+        DTS:DataType="3">2</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Lesson32"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{88AABF6F-6C83-4145-B040-4929B07B8686}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson32"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson32\L32 OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="L32 OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT NationalIDNumber
+,LoginID
+,OrganizationLevel
+,JobTitle
+,BirthDate
+,MaritalStatus
+,Gender
+,HireDate
+FROM HumanResources.Employee
+WHERE OrganizationLevel = ?</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping">"Параметр0:Input",{9F8D5BBA-A986-4259-A8D6-194AAF02340A};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson32\L32 OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[NationalIDNumber]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[NationalIDNumber]"
+                      length="15"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[NationalIDNumber]"
+                      name="NationalIDNumber"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LoginID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LoginID]"
+                      length="256"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LoginID]"
+                      name="LoginID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrganizationLevel]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[OrganizationLevel]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrganizationLevel]"
+                      name="OrganizationLevel"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[JobTitle]"
+                      length="50"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      name="JobTitle"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BirthDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BirthDate]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BirthDate]"
+                      name="BirthDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MaritalStatus]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[MaritalStatus]"
+                      length="1"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MaritalStatus]"
+                      name="MaritalStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Gender]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[HireDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[HireDate]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[HireDate]"
+                      name="HireDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[NationalIDNumber]"
+                      dataType="wstr"
+                      length="15"
+                      name="NationalIDNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[LoginID]"
+                      dataType="wstr"
+                      length="256"
+                      name="LoginID" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[OrganizationLevel]"
+                      dataType="i2"
+                      name="OrganizationLevel" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[JobTitle]"
+                      dataType="wstr"
+                      length="50"
+                      name="JobTitle" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[BirthDate]"
+                      dataType="dbDate"
+                      name="BirthDate" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[MaritalStatus]"
+                      dataType="wstr"
+                      length="1"
+                      name="MaritalStatus" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[HireDate]"
+                      dataType="dbDate"
+                      name="HireDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[NationalIDNumber]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[NationalIDNumber]"
+                      name="NationalIDNumber" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LoginID]"
+                      dataType="wstr"
+                      length="256"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[LoginID]"
+                      name="LoginID" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[OrganizationLevel]"
+                      dataType="i2"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[OrganizationLevel]"
+                      name="OrganizationLevel" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[JobTitle]"
+                      name="JobTitle" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BirthDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[BirthDate]"
+                      name="BirthDate" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[MaritalStatus]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[MaritalStatus]"
+                      name="MaritalStatus" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Gender]"
+                      dataType="wstr"
+                      length="1"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[HireDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[HireDate]"
+                      name="HireDate" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson32\Lesson32 FlatFile Dest"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1049"
+              name="Lesson32 FlatFile Dest">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson32\Lesson32 FlatFile Dest.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson32FlatFileConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson32FlatFileConnection]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[NationalIDNumber]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="NationalIDNumber"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[NationalIDNumber]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LoginID]"
+                      cachedDataType="wstr"
+                      cachedLength="256"
+                      cachedName="LoginID"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[LoginID]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[OrganizationLevel]"
+                      cachedDataType="i2"
+                      cachedName="OrganizationLevel"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[OrganizationLevel]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[JobTitle]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="JobTitle"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[JobTitle]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[BirthDate]"
+                      cachedDataType="dbDate"
+                      cachedName="BirthDate"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 4]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[BirthDate]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[MaritalStatus]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="MaritalStatus"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 5]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[MaritalStatus]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Gender]"
+                      cachedDataType="wstr"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 6]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[HireDate]"
+                      cachedDataType="dbDate"
+                      cachedName="HireDate"
+                      externalMetadataColumnId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 7]"
+                      lineageId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;].Columns[HireDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      dataType="wstr"
+                      length="15"
+                      name="Столбец 0" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      dataType="wstr"
+                      length="256"
+                      name="Столбец 1" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      dataType="i2"
+                      name="Столбец 2" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Столбец 3" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 4]"
+                      dataType="dbDate"
+                      name="Столбец 4" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 5]"
+                      dataType="wstr"
+                      length="1"
+                      name="Столбец 5" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 6]"
+                      dataType="wstr"
+                      length="1"
+                      name="Столбец 6" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 7]"
+                      dataType="dbDate"
+                      name="Столбец 7" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson32.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Lesson32\Lesson32 FlatFile Dest.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson32\L32 OLE DB Source.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Lesson32"
+          TopLeft="227,104" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Lesson32">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Lesson32\L32 OLE DB Source"
+          TopLeft="205,124" />
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Lesson32\Lesson32 FlatFile Dest"
+          TopLeft="194,252" />
+        <EdgeLayout
+          Id="Package\Lesson32.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="288,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson32\L32 OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

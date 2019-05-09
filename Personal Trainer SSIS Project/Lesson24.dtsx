@@ -1,0 +1,1974 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2019 1:14:41 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{D55BD9A1-23F3-488F-8950-D8E3233B35F6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson24"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{2C7C96CF-98BC-4592-9ECF-F4D9CE76DD5D}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson24a_FlatFileDestination]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{B20DC659-927F-4B98-B120-B6E1C17631E4}"
+      DTS:ObjectName="Lesson24a_FlatFileDestination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1049"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson24a_FlatFileDestination.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{9617C346-D009-4456-BC86-606D80019361}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastModifiedDate"
+              DTS:DTSID="{282143BE-33F0-48FE-8A98-4F8A2A17DAE9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalQty"
+              DTS:DTSID="{6C652D3F-56DC-4D58-8589-9C0C89649AAE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TotalCost"
+              DTS:DTSID="{E545911F-F189-4496-A05F-53145B114690}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{11AE1987-A910-427C-941C-050AB0459D19}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson24a_FlatFileSource]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{41F67352-68DB-446F-BC5F-06A413EE7CF1}"
+      DTS:ObjectName="Lesson24a_FlatFileSource">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson22FlatFileDestination.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 0"
+              DTS:DTSID="{379762BD-2AF2-4A77-9A9B-09309BC0C098}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 1"
+              DTS:DTSID="{80FD45AF-664F-4382-BD59-12777E68FC1A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x003B_"
+              DTS:DataType="19"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 2"
+              DTS:DTSID="{1F0B3AE6-E1EE-4544-B143-7B3E924C5EA0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Столбец 3"
+              DTS:DTSID="{834B9FBC-7718-487F-AFD8-972B7D957073}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson24a_LookUpSourceConnection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{F245B1EF-99C4-4DB6-9309-7EC6E9712EFA}"
+      DTS:ObjectName="Lesson24a_LookUpSourceConnection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=win-oc0su9gc7ii\sqlexpress;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson24b_Cache]"
+      DTS:CreationName="CACHE"
+      DTS:DTSID="{C4556E0D-FCA8-47D9-AC55-5D42752A812B}"
+      DTS:ObjectName="Lesson24b_Cache">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:UseFile="True"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson24b_Cache.caw)">
+          <DTS:CacheColumns>
+            <DTS:CacheColumn
+              DTS:DataType="19"
+              DTS:IndexPosition="1"
+              DTS:ObjectName="ProductID"
+              DTS:DTSID="{26DB3FAA-1D50-45BD-9295-D27A9B0DEC8B}"
+              DTS:CreationName="" />
+            <DTS:CacheColumn
+              DTS:DataType="130"
+              DTS:Length="50"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{0AE3792D-2E7B-4FF4-A934-6FD56C6324FC}"
+              DTS:CreationName="" />
+          </DTS:CacheColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{702A3C0A-BDAC-4A40-9EB2-0CCF3E1324D1}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intPart">
+      <DTS:VariableValue
+        DTS:DataType="3">2</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Cache Connection Management"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{03BFED6B-1E01-4579-AABA-F0965AA56210}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Cache Connection Management"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Cache Connection Management\FlatFileDestinationLesson24a"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1049"
+              name="FlatFileDestinationLesson24a">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_FlatFileDestination]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_FlatFileDestination]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductID]"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      cachedDataType="ui4"
+                      cachedName="TotalQty"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalQty]"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalCost"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalCost]"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductID]"
+                      dataType="ui4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalQty]"
+                      dataType="ui4"
+                      name="TotalQty" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalCost]"
+                      dataType="cy"
+                      name="TotalCost" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Cache Connection Management\FlatFileFromLesson22"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="FlatFileFromLesson22"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Connection Management\FlatFileFromLesson22.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_FlatFileSource]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_FlatFileSource]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  isSorted="true"
+                  name="Выход источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      name="TotalQty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      name="TotalCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      dataType="ui4"
+                      name="Столбец 0" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      dataType="dbTimeStamp"
+                      name="Столбец 1" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      dataType="ui4"
+                      name="Столбец 2" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      dataType="cy"
+                      name="Столбец 3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      codePage="1251"
+                      dataType="text"
+                      description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Connection Management\Product Source UnOrdered"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Product Source UnOrdered"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT ProductID, Name FROM Production.Product</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Connection Management\Product Source UnOrdered.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_LookUpSourceConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_LookUpSourceConnection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductID]"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Connection Management\Преобразование кэша"
+              componentClassID="Microsoft.Cache"
+              contactInfo="Преобразование кэша;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Записывает данные в кэш (файл CAW) с помощью диспетчера соединений с кэшем. Повторно используйте кэш в нескольких преобразованиях &quot;Уточняющий запрос&quot;, чтобы снизить нагрузку на базу данных. Предоставьте общий доступ к кэшу, чтобы уменьшить потребление ресурсов памяти. Примечание. Данные кэша хранятся в незашифрованном тексте. Не рекомендуется его использовать для конфиденциальных данных."
+              name="Преобразование кэша"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Определяет, должны ли повторяющиеся ключи в ссылочных данных обрабатываться как ошибки при использовании режима полного кэширования."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cache Connection Management\Преобразование кэша.Connections[CacheConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24b_Cache]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24b_Cache]"
+                  description="Соединение, используемое для доступа к кэшу."
+                  name="CacheConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Cache Connection Management\Преобразование кэша.Inputs[Вход кэша]"
+                  hasSideEffects="true"
+                  name="Вход кэша">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Преобразование кэша.Inputs[Вход кэша].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Столбец кэша, связанный с входным столбцом."
+                          name="CacheColumnName">ProductID</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Преобразование кэша.Inputs[Вход кэша].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Столбец кэша, связанный с входным столбцом."
+                          name="CacheColumnName">Name</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cache Connection Management\Преобразование кэша.Outputs[Выход кэша]"
+                  name="Выход кэша"
+                  synchronousInputId="Package\Cache Connection Management\Преобразование кэша.Inputs[Вход кэша]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Connection Management\Соединение слиянием"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Соединение слиянием;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Объедините два отсортированных потока данных в один с помощью соединения FULL, LEFT или INNER. Это преобразование рекомендуется использовать в случаях, когда потоки данных могут быть отсортированы по источникам."
+              name="Соединение слиянием"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает тип выполняемого соединения."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает количество столбцов в ключе упорядочивания."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считаются ли значения NULL эквивалентными значениями."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает запрошенное максимальное число буферов на вход перед блокированием."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Левый вход соединения слиянием]"
+                  hasSideEffects="true"
+                  name="Левый вход соединения слиянием">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием]"
+                  hasSideEffects="true"
+                  name="Правый вход соединения слиянием">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[TotalQty]"
+                      cachedDataType="ui4"
+                      cachedName="TotalQty"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]" />
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[TotalCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalCost"
+                      lineageId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием]"
+                  isSorted="true"
+                  name="Выход соединения слиянием">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]"
+                      dataType="ui4"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[ProductID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]"
+                      name="LastModifiedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[LastModifiedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]"
+                      dataType="ui4"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]"
+                      name="TotalQty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[TotalQty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]"
+                      dataType="cy"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]"
+                      name="TotalCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[TotalCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Cache Connection Management\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cache Connection Management\Сортировка"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Сортировка;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Сортирует входные данные по возрастанию или убыванию, если выполнить сортировку в источнике нельзя. Пример: сортировка данных продаж по полю &quot;customer id&quot; перед записью в неструктурированный файл и передачей в другой отдел. Примечание. Это преобразование не рекомендуется применять к большим потокам данных."
+              name="Сортировка"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, удаляет ли преобразование &quot;Сортировка&quot; строки с повторяющимися значениями сортировки."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает максимальное число потоков, используемых для сортировки."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Cache Connection Management\Сортировка.Inputs[Вход сортировки]"
+                  name="Вход сортировки">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Сортировка.Inputs[Вход сортировки].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Задает параметры сравнения символьных данных."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает порядок сортировки столбца."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Cache Connection Management\Сортировка.Inputs[Вход сортировки].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Задает параметры сравнения символьных данных."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает порядок сортировки столбца."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки]"
+                  isSorted="true"
+                  name="Выход сортировки">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[ProductID]"
+                      dataType="ui4"
+                      lineageId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор журнала обращений и преобразований входного столбца, связанного с этим выходным столбцом."
+                          name="SortColumnId">#{Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника "OLE DB"].Columns[ProductID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор журнала обращений и преобразований входного столбца, связанного с этим выходным столбцом."
+                          name="SortColumnId">#{Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника "OLE DB"].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Cache Connection Management.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Cache Connection Management\Преобразование кэша.Inputs[Вход кэша]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Cache Connection Management\Product Source UnOrdered.Outputs[Выход источника &quot;OLE DB&quot;]" />
+            <path
+              refId="Package\Cache Connection Management.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Cache Connection Management\Соединение слиянием.Inputs[Правый вход соединения слиянием]"
+              name="Выход источника &quot;Неструктурированный файл&quot;"
+              startId="Package\Cache Connection Management\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+            <path
+              refId="Package\Cache Connection Management.Paths[Выход кэша]"
+              endId="Package\Cache Connection Management\Сортировка.Inputs[Вход сортировки]"
+              name="Выход кэша"
+              startId="Package\Cache Connection Management\Преобразование кэша.Outputs[Выход кэша]" />
+            <path
+              refId="Package\Cache Connection Management.Paths[Выход соединения слиянием]"
+              endId="Package\Cache Connection Management\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Выход соединения слиянием"
+              startId="Package\Cache Connection Management\Соединение слиянием.Outputs[Выход соединения слиянием]" />
+            <path
+              refId="Package\Cache Connection Management.Paths[Выход сортировки]"
+              endId="Package\Cache Connection Management\Соединение слиянием.Inputs[Левый вход соединения слиянием]"
+              name="Выход сортировки"
+              startId="Package\Cache Connection Management\Сортировка.Outputs[Выход сортировки]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete FlatFile Destination"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="Задача &quot;Файловая система&quot;"
+      DTS:DTSID="{6B76EF21-EA03-4736-A7EE-33FBAC7A085D}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete FlatFile Destination"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{B20DC659-927F-4B98-B120-B6E1C17631E4}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Lesson24a JOIN"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{45882786-4390-432D-87FC-A6EECE0DACAF}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson24a JOIN">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Назначение &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Назначение &quot;Неструктурированный файл&quot;"
+              localeId="1049"
+              name="FlatFileDestinationLesson24a">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, следует ли перезаписывать данные в целевой файл или добавлять их в его конец."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает текст, который записывается в целевой файл перед записью любых данных."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="Если ограничитель текста включен, указывает, будут ли добавляться escape-символы для ограничителя в данных, записываемых в конечный файл."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_FlatFileDestination]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_FlatFileDestination]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;Неструктурированный файл&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductID]"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastModifiedDate]"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      cachedDataType="ui4"
+                      cachedName="TotalQty"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalQty]"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalCost"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalCost]"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[ProductID]"
+                      dataType="ui4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      name="LastModifiedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalQty]"
+                      dataType="ui4"
+                      name="TotalQty" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[TotalCost]"
+                      dataType="cy"
+                      name="TotalCost" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Lesson24a JOIN\FlatFileFromLesson22"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="FlatFileFromLesson22"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_FlatFileSource]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_FlatFileSource]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  isSorted="true"
+                  name="Выход источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]"
+                      name="LastModifiedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]"
+                      name="TotalQty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]"
+                      name="TotalCost"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 0]"
+                      dataType="ui4"
+                      name="Столбец 0" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 1]"
+                      dataType="dbTimeStamp"
+                      name="Столбец 1" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 2]"
+                      dataType="ui4"
+                      name="Столбец 2" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Столбец 3]"
+                      dataType="cy"
+                      name="Столбец 3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      codePage="1251"
+                      dataType="text"
+                      description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Источник &quot;OLE DB&quot;"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        ProductID, Name
+FROM            Production.Product
+ORDER BY ProductID</property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson24a_LookUpSourceConnection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson24a_LookUpSourceConnection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  isSorted="true"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductID]"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      length="50"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      name="Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[Name]"
+                      name="Name" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson24a JOIN\Соединение слиянием"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Соединение слиянием;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Объедините два отсортированных потока данных в один с помощью соединения FULL, LEFT или INNER. Это преобразование рекомендуется использовать в случаях, когда потоки данных могут быть отсортированы по источникам."
+              name="Соединение слиянием"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает тип выполняемого соединения."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает количество столбцов в ключе упорядочивания."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считаются ли значения NULL эквивалентными значениями."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает запрошенное максимальное число буферов на вход перед блокированием."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием]"
+                  hasSideEffects="true"
+                  name="Левый вход соединения слиянием">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[LastModifiedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastModifiedDate"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[LastModifiedDate]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[TotalQty]"
+                      cachedDataType="ui4"
+                      cachedName="TotalQty"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalQty]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[TotalCost]"
+                      cachedDataType="cy"
+                      cachedName="TotalCost"
+                      lineageId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[TotalCost]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Правый вход соединения слиянием]"
+                  hasSideEffects="true"
+                  name="Правый вход соединения слиянием">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[ProductID]"
+                      cachedDataType="ui4"
+                      cachedName="ProductID"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[Name]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Name"
+                      lineageId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;].Columns[Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием]"
+                  isSorted="true"
+                  name="Выход соединения слиянием">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]"
+                      dataType="ui4"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[ProductID]"
+                      name="ProductID"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[ProductID]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[LastModifiedDate]"
+                      name="LastModifiedDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[LastModifiedDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]"
+                      dataType="ui4"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalQty]"
+                      name="TotalQty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[TotalQty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]"
+                      dataType="cy"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[TotalCost]"
+                      name="TotalCost">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием].Columns[TotalCost]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием].Columns[Name]"
+                      name="Name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Входной столбец, связанный с этим выходным столбцом"
+                          name="InputColumnID">#{Package\Lesson24a JOIN\Соединение слиянием.Inputs[Правый вход соединения слиянием].Columns[Name]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson24a JOIN.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Правый вход соединения слиянием]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;.Outputs[Выход источника &quot;OLE DB&quot;]" />
+            <path
+              refId="Package\Lesson24a JOIN.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Lesson24a JOIN\Соединение слиянием.Inputs[Левый вход соединения слиянием]"
+              name="Выход источника &quot;Неструктурированный файл&quot;"
+              startId="Package\Lesson24a JOIN\FlatFileFromLesson22.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+            <path
+              refId="Package\Lesson24a JOIN.Paths[Выход соединения слиянием]"
+              endId="Package\Lesson24a JOIN\FlatFileDestinationLesson24a.Inputs[Вход назначения &quot;Неструктурированный файл&quot;]"
+              name="Выход соединения слиянием"
+              startId="Package\Lesson24a JOIN\Соединение слиянием.Outputs[Выход соединения слиянием]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:Description="Executes only Part A"
+      DTS:DTSID="{09455F9D-5EFD-48CD-9406-B56BEEE052D9}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::intPart] == 1"
+      DTS:From="Package\Delete FlatFile Destination"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Lesson24a JOIN" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 2]"
+      DTS:CreationName=""
+      DTS:Description="Executes only Part B"
+      DTS:DTSID="{74C23B46-B0DC-4238-874B-F916F8A47A82}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::intPart] == 2"
+      DTS:From="Package\Delete FlatFile Destination"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 2"
+      DTS:To="Package\Cache Connection Management" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,56"
+          Id="Package\Cache Connection Management"
+          TopLeft="385,260" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Delete FlatFile Destination"
+          TopLeft="212,102" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Lesson24a JOIN"
+          TopLeft="63.5,264.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="280.666666666667,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-139.666666666667,120.5"
+              Start="0,0"
+              End="-139.666666666667,113">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.7681728880157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,44.7681728880157"
+                    Point2="0,48.7681728880157"
+                    Point3="-4,48.7681728880157" />
+                  <mssgle:LineSegment
+                    End="-135.666666666667,48.7681728880157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-135.666666666667,48.7681728880157"
+                    Point2="-139.666666666667,48.7681728880157"
+                    Point3="-139.666666666667,52.7681728880157" />
+                  <mssgle:LineSegment
+                    End="-139.666666666667,113" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-77.8333333333333,53.7681728880157,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 2]"
+          TopLeft="345.333333333333,144">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="115.666666666667,116"
+              Start="0,0"
+              End="115.666666666667,108.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.9469548133595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.9469548133595"
+                    Point2="0,46.9469548133595"
+                    Point3="4,46.9469548133595" />
+                  <mssgle:LineSegment
+                    End="111.666666666667,46.9469548133595" />
+                  <mssgle:CubicBezierSegment
+                    Point1="111.666666666667,46.9469548133595"
+                    Point2="115.666666666667,46.9469548133595"
+                    Point3="115.666666666667,50.9469548133595" />
+                  <mssgle:LineSegment
+                    End="115.666666666667,108.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="49.8333333333333,51.9469548133595,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Cache Connection Management">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Cache Connection Management\Преобразование кэша"
+          TopLeft="112,159" />
+        <NodeLayout
+          Size="136,42"
+          Id="Package\Cache Connection Management\Сортировка"
+          TopLeft="138,259" />
+        <NodeLayout
+          Size="205,42"
+          Id="Package\Cache Connection Management\Product Source UnOrdered"
+          TopLeft="108,51" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Cache Connection Management\Соединение слиянием"
+          TopLeft="259,360" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Cache Connection Management\FlatFileDestinationLesson24a"
+          TopLeft="263,443" />
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Cache Connection Management\FlatFileFromLesson22"
+          TopLeft="410,137" />
+        <EdgeLayout
+          Id="Package\Cache Connection Management.Paths[Выход сортировки]"
+          TopLeft="206,301">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="117,59"
+              Start="0,0"
+              End="117,51.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1012658227848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.1012658227848"
+                    Point2="0,35.1012658227848"
+                    Point3="4,35.1012658227848" />
+                  <mssgle:LineSegment
+                    End="113,35.1012658227848" />
+                  <mssgle:CubicBezierSegment
+                    Point1="113,35.1012658227848"
+                    Point2="117,35.1012658227848"
+                    Point3="117,39.1012658227848" />
+                  <mssgle:LineSegment
+                    End="117,51.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cache Connection Management.Paths[Выход соединения слиянием]"
+          TopLeft="353,402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="17.5,41"
+              Start="0,0"
+              End="17.5,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
+                  <mssgle:LineSegment
+                    End="13.5,20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.5,20.5"
+                    Point2="17.5,20.5"
+                    Point3="17.5,24.5" />
+                  <mssgle:LineSegment
+                    End="17.5,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cache Connection Management.Paths[Выход кэша]"
+          TopLeft="206,201">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,58"
+              Start="0,0"
+              End="0,50.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cache Connection Management.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="500,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-117,181"
+              Start="0,0"
+              End="-117,173.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,103.683544303797" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,103.683544303797"
+                    Point2="0,107.683544303797"
+                    Point3="-4,107.683544303797" />
+                  <mssgle:LineSegment
+                    End="-113,107.683544303797" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-113,107.683544303797"
+                    Point2="-117,107.683544303797"
+                    Point3="-117,111.683544303797" />
+                  <mssgle:LineSegment
+                    End="-117,173.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Cache Connection Management.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="208.25,93">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="One needs to put&#xD;&#xA;&quot;Уточняющий запрос&quot;&#xD;&#xA;instead of JOIN"
+          ParentId="Package\Cache Connection Management"
+          FontInfo="{x:Null}"
+          Size="152,72"
+          Id="35f556bf-1865-4514-a9ef-d9862a998458"
+          TopLeft="464,342" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Cache Connection Management\Product Source UnOrdered">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Lesson24a JOIN">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Lesson24a JOIN\FlatFileFromLesson22"
+          TopLeft="403,33" />
+        <NodeLayout
+          Size="215,42"
+          Id="Package\Lesson24a JOIN\FlatFileDestinationLesson24a"
+          TopLeft="157,318" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;"
+          TopLeft="79,85" />
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Lesson24a JOIN\Соединение слиянием"
+          TopLeft="223,196" />
+        <EdgeLayout
+          Id="Package\Lesson24a JOIN.Paths[Выход соединения слиянием]"
+          TopLeft="317,238">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-52.5,80"
+              Start="0,0"
+              End="-52.5,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="-4,40" />
+                  <mssgle:LineSegment
+                    End="-48.5,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-48.5,40"
+                    Point2="-52.5,40"
+                    Point3="-52.5,44" />
+                  <mssgle:LineSegment
+                    End="-52.5,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lesson24a JOIN.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="493,75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-146,121"
+              Start="0,0"
+              End="-146,113.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,67.9873417721519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,67.9873417721519"
+                    Point2="0,71.9873417721519"
+                    Point3="-4,71.9873417721519" />
+                  <mssgle:LineSegment
+                    End="-142,71.9873417721519" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-142,71.9873417721519"
+                    Point2="-146,71.9873417721519"
+                    Point3="-146,75.9873417721519" />
+                  <mssgle:LineSegment
+                    End="-146,113.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Lesson24a JOIN.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="165.5,127">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="121.5,69"
+              Start="0,0"
+              End="121.5,61.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.0506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,37.0506329113924"
+                    Point2="0,41.0506329113924"
+                    Point3="4,41.0506329113924" />
+                  <mssgle:LineSegment
+                    End="117.5,41.0506329113924" />
+                  <mssgle:CubicBezierSegment
+                    Point1="117.5,41.0506329113924"
+                    Point2="121.5,41.0506329113924"
+                    Point3="121.5,45.0506329113924" />
+                  <mssgle:LineSegment
+                    End="121.5,61.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson24a JOIN\Источник &quot;OLE DB&quot;">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,374 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/8/2019 5:06:53 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{523C3B04-6009-40FC-A27D-94767BDE1D77}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson25"
+  DTS:PackageType="5"
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{FD4D08AC-4BA7-44A3-8210-B9BEEDFBE78C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{C30D14BE-2C13-4404-860A-800D92ED4EC4}"
+      DTS:ObjectName="AW2012Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=win-oc0su9gc7ii\sqlexpress;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1C76A5DE-FA4D-498E-94CA-1C23DA02BC06}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="intRowCount">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Lesson25"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{F773904B-597A-439A-835F-C57F0BC3A60E}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson25"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson25\Error Log ID"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Источник &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;7"
+              description="Источник &quot;OLE DB&quot;"
+              name="Error Log ID"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[ErrorLog]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Переменная, содержащая команду SQL для выполнения."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Сопоставления между параметрами в команде SQL и переменными."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson25\Error Log ID.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;]"
+                  name="Выход источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ErrorLogID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorLogID]"
+                      lineageId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].Columns[ErrorLogID]"
+                      name="ErrorLogID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorLogID]"
+                      dataType="i4"
+                      name="ErrorLogID" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorTime]"
+                      dataType="dbTimeStamp"
+                      name="ErrorTime" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[UserName]"
+                      dataType="wstr"
+                      length="128"
+                      name="UserName" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorNumber]"
+                      dataType="i4"
+                      name="ErrorNumber" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorSeverity]"
+                      dataType="i4"
+                      name="ErrorSeverity" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorState]"
+                      dataType="i4"
+                      name="ErrorState" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorProcedure]"
+                      dataType="wstr"
+                      length="126"
+                      name="ErrorProcedure" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorLine]"
+                      dataType="i4"
+                      name="ErrorLine" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;].ExternalColumns[ErrorMessage]"
+                      dataType="wstr"
+                      length="4000"
+                      name="ErrorMessage" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;OLE DB&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorLogID]"
+                      dataType="i4"
+                      lineageId="Package\Lesson25\Error Log ID.Outputs[Вывод ошибок источника &quot;OLE DB&quot;].Columns[ErrorLogID]"
+                      name="ErrorLogID" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson25\Счетчик строк"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Счетчик строк;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+              description="Подсчитывает количество строк, обработанных потоком данных. Пример: количество обработанных строк можно использовать для определения необходимости выполнения операций очистки или обновления текста в сообщении электронной почты для передачи сведений о выполнении обработки."
+              name="Счетчик строк">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, хранящую счетчик строк."
+                  name="VariableName">User::intRowCount</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Lesson25\Счетчик строк.Inputs[Счетчик строк Вход 1]"
+                  hasSideEffects="true"
+                  name="Счетчик строк Вход 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson25\Счетчик строк.Outputs[Счетчик строк Выход 1]"
+                  name="Счетчик строк Выход 1"
+                  synchronousInputId="Package\Lesson25\Счетчик строк.Inputs[Счетчик строк Вход 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson25.Paths[Выход источника &quot;OLE DB&quot;]"
+              endId="Package\Lesson25\Счетчик строк.Inputs[Счетчик строк Вход 1]"
+              name="Выход источника &quot;OLE DB&quot;"
+              startId="Package\Lesson25\Error Log ID.Outputs[Выход источника &quot;OLE DB&quot;]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\ST 1"
+      DTS:CreationName="Microsoft.ScriptTask"
+      DTS:Description="Задача &quot;Скрипт&quot;"
+      DTS:DTSID="{A404A404-F284-4EBF-8E54-E969CF4F5D6C}"
+      DTS:ExecutableType="Microsoft.ScriptTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ST 1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ScriptProject
+          Name="ST_0c643c0d751248cdac3006eddd2c1c21"
+          VSTAMajorVersion="14"
+          VSTAMinorVersion="0"
+          Language="CSharp" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{11ECB3BF-8F68-4E05-B6BD-0FFC4D851DE6}"
+      DTS:EvalOp="1"
+      DTS:Expression="@[User::intRowCount] &gt; 0"
+      DTS:From="Package\Lesson25"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\ST 1" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Lesson25"
+          TopLeft="204,138" />
+        <NodeLayout
+          Size="100,42"
+          Id="Package\ST 1"
+          TopLeft="208,229" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="261.75,180">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,12.75,16,16"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text=""
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="29,60"
+          Id="763f18f6-afa1-4a1e-bd3f-6d0fac6a73fa"
+          TopLeft="370,275" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Lesson25">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="149,42"
+          Id="Package\Lesson25\Счетчик строк"
+          TopLeft="132,245" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Lesson25\Error Log ID"
+          TopLeft="137,124" />
+        <EdgeLayout
+          Id="Package\Lesson25.Paths[Выход источника &quot;OLE DB&quot;]"
+          TopLeft="206,166">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson25\Error Log ID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

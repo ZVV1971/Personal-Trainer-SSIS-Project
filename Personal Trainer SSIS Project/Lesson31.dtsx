@@ -1,0 +1,852 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/9/2019 2:15:45 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{C59D63B5-849A-4EFA-B6C9-9906FB814311}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson31"
+  DTS:PackageType="5"
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{3964CA33-0269-4F58-9923-86F3356E8263}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD780880-6CD0-49A4-A960-FA9BD675338B}"
+      DTS:ObjectName="AW2012Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=win-oc0su9gc7ii\sqlexpress;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson31FlatFileConnect]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{768947F7-9214-4BBA-857E-BE3F95D80C41}"
+      DTS:ObjectName="Lesson31FlatFileConnect">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\FuzzyExample.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LASTNAME"
+              DTS:DTSID="{9F83C5BD-BE96-4A3C-9B6D-E5EB64ACD391}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIRSTNAME"
+              DTS:DTSID="{E534B901-19F6-4180-814F-FAE9224F746C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TITLE"
+              DTS:DTSID="{7321B68A-15F5-4FFC-A243-753B67A5A19E}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson31Interimdestination]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1DE853AA-EF7F-43B1-A553-5DB66EA7FA9A}"
+      DTS:ObjectName="Lesson31Interimdestination">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\DestinationFolder\Lesson31Interimdestination.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_key_in"
+              DTS:DTSID="{06097794-12EA-4DC1-8A9F-3DEF221F5D34}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_key_out"
+              DTS:DTSID="{875180E6-7D5B-4518-9AEC-88D69FA41171}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_score"
+              DTS:DTSID="{B8E40E37-9751-4E1F-B9A0-53B07D6FF102}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LASTNAME"
+              DTS:DTSID="{31CC1C7F-5819-4659-A06A-DB45C428E571}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FIRSTNAME"
+              DTS:DTSID="{794F805B-417D-4597-90D3-D402777CA506}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TITLE"
+              DTS:DTSID="{91E3ECC7-1792-4138-887A-0FC8FA08BE21}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TITLE_clean"
+              DTS:DTSID="{51300342-4B9B-41CE-B833-75D373E4EDA4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="4"
+              DTS:TextQualified="True"
+              DTS:ObjectName="_Similarity_TITLE"
+              DTS:DTSID="{9314EC19-E44A-41A9-B6C5-928079DABA79}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Lesson31 Fuzzy Grouping"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:DTSID="{729165C4-5BF0-440C-AB0B-010F521B9C01}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Lesson31 Fuzzy Grouping">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Lesson31 Fuzzy Grouping\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Условное разбиение;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;0"
+              description="Распределяет строки данных по разным выходам в зависимости от содержимого данных. Используйте условие (выражения SSIS), чтобы указать распределяемые строки. Пример: разделение записей, которые необходимо очистить, от подготовленных к загрузке или распределение только подмножества записей."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения]"
+                  description="Ввод преобразования &quot;Условное разбиение&quot;"
+                  name="Вход условного разбиения">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения].Columns[_key_in]"
+                      cachedDataType="i4"
+                      cachedName="_key_in"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_in]" />
+                    <inputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения].Columns[_key_out]"
+                      cachedDataType="i4"
+                      cachedName="_key_out"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_out]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Bestmatch]"
+                  description="Вывод 1 преобразования &quot;Условное разбиение&quot;"
+                  errorOrTruncationOperation="Вычисление"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Bestmatch"
+                  synchronousInputId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Указывает выражение. Версия этого выражения использует вместо имен столбцов идентификаторы журнала обращений и преобразований."
+                      name="Expression">#{Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_in]} == #{Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_out]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Задает понятную версию выражения. Эта версия выражения использует имена столбцов."
+                      expressionType="Notify"
+                      name="FriendlyExpression">_key_in == _key_out</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Указывает положение условия в списке условий, который вычисляется преобразованием. Вычисление производится в порядке от меньшего к большему значению."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[CleanData]"
+                  description="Выход по умолчанию преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  name="CleanData"
+                  synchronousInputId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Вывод ошибок условного разбиения]"
+                  description="Вывод ошибок преобразования &quot;Условное разбиение&quot;"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок условного разбиения"
+                  synchronousInputId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Вывод ошибок условного разбиения].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+              description="Источник &quot;Неструктурированный файл&quot;"
+              localeId="1033"
+              name="Fuzzy Grouing Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Lesson31FlatFileConnect]"
+                  connectionManagerRefId="Package.ConnectionManagers[Lesson31FlatFileConnect]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                  name="Выход источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[OccupationLabel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Преобразование"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[TITLE]"
+                      length="50"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[OccupationLabel]"
+                      name="OccupationLabel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, являются ли данные двоичными."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[LASTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="LASTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[FIRSTNAME]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="FIRSTNAME" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[TITLE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="TITLE" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                  isErrorOut="true"
+                  name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                      name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping"
+              componentClassID="Microsoft.FuzzyGrouping"
+              contactInfo="Нечеткое группирование;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;3"
+              description="Определяет возможные повторяющиеся строки и стандартизирует данные путем выбора канонических замен. Пример: уменьшение количества опечаток в столбце &quot;company name&quot; с помощью ссылок на утвержденный список названий компаний."
+              name="Fuzzy Grouping"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Single"
+                  description="Указывает минимальное значение порога подобия, выраженное числом от 0 до 1."
+                  name="MinSimilarity">0.5</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает пробельные символы и знаки пунктуации, используемые для разделения строк на несколько слов."
+                  name="Delimiters"> 	
+,.;:-"'&amp;/\@!?()&lt;&gt;[]{}|#*^%</property>
+                <property
+                  dataType="System.Null"
+                  description="Задает максимальный объем памяти (МБ), который должен использоваться преобразованием. Значение 0 разрешает динамическое использование памяти в соответствии с требованиями и объемом доступной системной памяти."
+                  expressionType="Notify"
+                  name="MaxMemoryUsage" />
+                <property
+                  dataType="System.Boolean"
+                  description="Значение true означает, что каждая входная запись будет непосредственно сравниваться с КАЖДОЙ из остальных входных записей. Это может несколько повысить качество результатов, однако резко снизит скорость обработки, если количество входных записей не окажется весьма малым. Этот параметр предназначен в основном для отладки. При его использовании следует соблюдать осторожность."
+                  name="Exhaustive">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Inputs[Входные данные нечеткого группирования]"
+                  name="Входные данные нечеткого группирования">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Inputs[Входные данные нечеткого группирования].Columns[OccupationLabel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OccupationLabel"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[OccupationLabel]">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Указывает, следует ли использовать столбец для определения подобия строк."
+                          name="ToBeCleaned">true</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает, должны ли строки иметь точное соответствие или нечеткое соответствие, чтобы считаться дубликатами."
+                          name="ExactFuzzy"
+                          typeConverter="tcJoinType">2</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает указание, которое снижает вероятность признания дубликатами строк, имеющих различные числовые значения в начале или в конце."
+                          name="LeadingTrailingNumeralsSignificant"
+                          typeConverter="tcNumeralsSignificant">0</property>
+                        <property
+                          dataType="System.Single"
+                          description="Указывает минимальное значение порога подобия, выраженное числом от 0 до 1."
+                          name="MinSimilarity">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает, как сравниваются строковые данные в столбце."
+                          name="FuzzyComparisonFlags"
+                          typeConverter="tcComparisonFlags">196611</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования]"
+                  name="Выходные данные нечеткого группирования">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_in]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_in]"
+                      name="_key_in">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">1</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_out]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_key_out]"
+                      name="_key_out">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">2</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_score]"
+                      dataType="r4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_score]"
+                      name="_score">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">3</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\-1:invalid}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[OccupationLabel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[OccupationLabel]"
+                      name="OccupationLabel">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">5</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника "Неструктурированный файл"].Columns[OccupationLabel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[TITLE_clean]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[TITLE_clean]"
+                      name="TITLE_clean">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">6</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника "Неструктурированный файл"].Columns[OccupationLabel]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_Similarity_TITLE]"
+                      dataType="r4"
+                      description="Оценка подобия уровня столбца для нечеткого соединения по столбцу &quot;TITLE&quot;."
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[_Similarity_TITLE]"
+                      name="_Similarity_TITLE">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Указывает тип столбца. Допустимые значения: Canonical, ColumnSimilarity, KeyIn, KeyOut, PassThru, Similarity и Undefined."
+                          name="ColumnType"
+                          typeConverter="tcColumnType">4</property>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Указывает идентификатор входного столбца. Значение должно быть положительным целым числом."
+                          name="InputId">#{Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника "Неструктурированный файл"].Columns[OccupationLabel]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Назначение &quot;OLE DB&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;4"
+              description="Назначение &quot;OLE DB&quot;"
+              name="Fuzzy Groupoing Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания команды, в секундах. Величина 0 означает неограниченное время ожидания."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowset">[dbo].[Occupation_FuzzyGrouping]</property>
+                <property
+                  dataType="System.String"
+                  description="Указывает переменную, содержащую имя объекта базы данных, используемого для открытия набора строк."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Команда SQL для выполнения."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает кодовую страницу столбца, используемую, когда недоступны сведения о кодовой странице из источника данных."
+                  name="DefaultCodePage">1251</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Вызывает безусловное использование значение свойства DefaultCodePage при описании символьных данных."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Указывает используемый режим доступа к базе данных."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, должны ли значения в столбцах идентификаторов копироваться в назначение. Если свойство имеет значение false, значения в столбцах идентификаторов будут созданы автоматически в месте назначения. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Указывает, будут ли в назначение вставляться значения NULL для столбцов, содержащих их. Значение false показывает, что если столбец имеет значение NULL, то в назначение будет вставлено его значение по умолчанию. Применяется только в случае, если включена быстрая загрузка."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Задает параметры быстрой загрузки. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Задает, когда выдаются сообщения о фиксации транзакции в ходе вставки данных. Значение 0 задает, что по окончании вставки данных будет выдано одно сообщение о фиксации транзакции. Применяется только в том случае, если включена быстрая загрузка."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AW2012Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[AW2012Connection]"
+                  description="Соединение OLE DB среды выполнения, используемое для доступа к базе данных."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;]"
+                  errorOrTruncationOperation="Вставить"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Вход назначения &quot;OLE DB&quot;">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;].Columns[OccupationLabel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="OccupationLabel"
+                      externalMetadataColumnId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OccupationLabel]"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования].Columns[OccupationLabel]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OccupationID]"
+                      dataType="i2"
+                      name="OccupationID" />
+                    <externalMetadataColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;].ExternalColumns[OccupationLabel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="OccupationLabel" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Вывод ошибок назначения &quot;OLE DB&quot;"
+                  synchronousInputId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Outputs[Вывод ошибок назначения &quot;OLE DB&quot;].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Lesson31 Fuzzy Grouping.Paths[Bestmatch]"
+              endId="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination.Inputs[Вход назначения &quot;OLE DB&quot;]"
+              name="Bestmatch"
+              startId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Outputs[Bestmatch]" />
+            <path
+              refId="Package\Lesson31 Fuzzy Grouping.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+              endId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Inputs[Входные данные нечеткого группирования]"
+              name="Выход источника &quot;Неструктурированный файл&quot;"
+              startId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+            <path
+              refId="Package\Lesson31 Fuzzy Grouping.Paths[Выходные данные нечеткого группирования]"
+              endId="Package\Lesson31 Fuzzy Grouping\Conditional Split.Inputs[Вход условного разбиения]"
+              name="Выходные данные нечеткого группирования"
+              startId="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping.Outputs[Выходные данные нечеткого группирования]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Lesson31 Fuzzy Grouping"
+          TopLeft="5.5,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Lesson31 Fuzzy Grouping">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouping"
+          TopLeft="141,133" />
+        <NodeLayout
+          Size="221,42"
+          Id="Package\Lesson31 Fuzzy Grouping\Fuzzy Grouing Flat File Source"
+          TopLeft="105,30" />
+        <EdgeLayout
+          Id="Package\Lesson31 Fuzzy Grouping.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="216.25,72">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61"
+              Start="0,0"
+              End="0,53.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Lesson31 Fuzzy Grouping\Conditional Split"
+          TopLeft="135,220" />
+        <EdgeLayout
+          Id="Package\Lesson31 Fuzzy Grouping.Paths[Выходные данные нечеткого группирования]"
+          TopLeft="214.75,175">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text=""
+          ParentId="Package\Lesson31 Fuzzy Grouping"
+          FontInfo="{assembly:Null}"
+          Size="29,60"
+          Id="2b1cbbe5-2862-475b-a536-e189f0c851fb"
+          TopLeft="398,363" />
+        <NodeLayout
+          Size="214,42"
+          Id="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination"
+          TopLeft="110,363" />
+        <EdgeLayout
+          Id="Package\Lesson31 Fuzzy Grouping.Paths[Bestmatch]"
+          TopLeft="214.75,262">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,101"
+              Start="0,0"
+              End="0,93.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-23.38193359375,41.87548828125,46.7638671875,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Lesson31 Fuzzy Grouping\Fuzzy Groupoing Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
