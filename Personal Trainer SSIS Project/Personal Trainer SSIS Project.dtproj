@@ -129,6 +129,11 @@
           <References />
         </DtsPackage>
         <DtsPackage FormatVersion="8">
+          <Name>Lesson34.dtsx</Name>
+          <FullPath>Lesson34.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
           <Name>Lesson6.dtsx</Name>
           <FullPath>Lesson6.dtsx</FullPath>
           <References />
@@ -136,6 +141,11 @@
         <DtsPackage FormatVersion="8">
           <Name>Lesson9.dtsx</Name>
           <FullPath>Lesson9.dtsx</FullPath>
+          <References />
+        </DtsPackage>
+        <DtsPackage FormatVersion="8">
+          <Name>Lesson35.dtsx</Name>
+          <FullPath>Lesson35.dtsx</FullPath>
           <References />
         </DtsPackage>
       </DTSPackages>

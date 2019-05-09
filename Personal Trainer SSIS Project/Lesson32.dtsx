@@ -11,8 +11,8 @@
   DTS:LocaleID="1049"
   DTS:ObjectName="Lesson32"
   DTS:PackageType="5"
-  DTS:VersionBuild="6"
-  DTS:VersionGUID="{730BE5D6-57F8-42B0-9026-1250F5C7B367}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{0B55A655-EB2E-45E5-B369-BC6DF7FEDADB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -566,13 +566,13 @@ WHERE OrganizationLevel = ?</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="170,42"
-          Id="Package\Lesson32\L32 OLE DB Source"
-          TopLeft="205,124" />
-        <NodeLayout
           Size="184,42"
           Id="Package\Lesson32\Lesson32 FlatFile Dest"
           TopLeft="194,252" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Lesson32\L32 OLE DB Source"
+          TopLeft="205,124" />
         <EdgeLayout
           Id="Package\Lesson32.Paths[Выход источника &quot;OLE DB&quot;]"
           TopLeft="288,166">

@@ -12,8 +12,8 @@
   DTS:ObjectName="Lesson33"
   DTS:PackageType="5"
   DTS:ProtectionLevel="0"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{54B6169C-DB8F-4756-8599-C945449148E2}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{6E8E5EF0-8E29-4864-9F64-F14D5CFED201}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -543,7 +543,7 @@ WHERE OrganizationLevel = ?</property>
         <NodeLayout
           Size="130,47"
           Id="Package\Lesson33 - Employee Export"
-          TopLeft="225,50" />
+          TopLeft="210,218" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
