@@ -1,0 +1,479 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2019 9:40:49 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{521E3943-9005-4841-A96F-6B81C9852D5A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson40"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{022EB543-941E-4091-A23B-D9937A963119}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40LoadCustomerDim.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F3A9BE5B-CD88-4AF8-958C-3EF89BF04F76}"
+      DTS:ObjectName="Lesson40LoadCustomerDim.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40LoadCustomerDim.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40LoadEmployeeCustomerCallsFact.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{2A2C6F55-94BA-472E-A5EF-735BCA17BA97}"
+      DTS:ObjectName="Lesson40LoadEmployeeCustomerCallsFact.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40LoadEmployeeCustomerCallsFact.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40LoadEmployeeDim.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{47B5B551-4E29-4EC3-BA7D-4684A803D1BB}"
+      DTS:ObjectName="Lesson40LoadEmployeeDim.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40LoadEmployeeDim.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40LoadProductDim.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{235F90F6-CC1C-4EB6-9FEC-8791C36C73B3}"
+      DTS:ObjectName="Lesson40LoadProductDim.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40LoadProductDim.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40LoadProductSalesFact.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{3011AFD2-5D8B-4FBE-BB51-3A79B9EEEFFC}"
+      DTS:ObjectName="Lesson40LoadProductSalesFact.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40LoadProductSalesFact.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40ProcessCustomerSupportCube.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{695388DB-3019-4DDE-8FF3-E831D8B9110B}"
+      DTS:ObjectName="Lesson40ProcessCustomerSupportCube.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40ProcessCustomerSupportCube.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Lesson40ProcessSalesCube.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{F1395FDA-8D46-46C7-A83A-84F260AB01C5}"
+      DTS:ObjectName="Lesson40ProcessSalesCube.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson40\Lesson40ProcessSalesCube.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Customer Dim"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{F2E28439-2684-465B-9EC1-1F95BD1C7923}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Customer Dim"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{F3A9BE5B-CD88-4AF8-958C-3EF89BF04F76}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Employee Dim"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{294FDF6D-8480-4A87-A13E-2EB3F56A6F64}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Employee Dim"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{47B5B551-4E29-4EC3-BA7D-4684A803D1BB}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Emplyee Customer Calls Fact"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{9B050768-949E-40AD-83A9-1998C288E769}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Emplyee Customer Calls Fact"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{2A2C6F55-94BA-472E-A5EF-735BCA17BA97}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Product Dim"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{BA33B8FD-5929-4F46-A070-DFDB90076D7D}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Product Dim"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{235F90F6-CC1C-4EB6-9FEC-8791C36C73B3}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Sales Fact"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{DF0C6205-40F2-470F-9A27-9E2D13596702}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Sales Fact"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{3011AFD2-5D8B-4FBE-BB51-3A79B9EEEFFC}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Proccess Sutomer Support Cube"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{76D86BDA-7D95-476D-B9B1-AB410FD05327}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Proccess Sutomer Support Cube"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{695388DB-3019-4DDE-8FF3-E831D8B9110B}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Process Sales Cube"
+      DTS:CreationName="Microsoft.ExecutePackageTask"
+      DTS:Description="Задача &quot;Выполнение пакета&quot;"
+      DTS:DTSID="{B9FFE480-9FD6-4998-81A8-B34AA7902F8C}"
+      DTS:ExecutableType="Microsoft.ExecutePackageTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Process Sales Cube"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <Connection>{F1395FDA-8D46-46C7-A83A-84F260AB01C5}</Connection>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{2030AA7B-7A67-447A-822E-D90C168094BB}"
+      DTS:From="Package\Load Product Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Load Sales Fact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{0328A7F6-CA2A-408B-B601-EA9B81DF01A7}"
+      DTS:From="Package\Load Customer Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 1"
+      DTS:To="Package\Load Sales Fact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{56828F53-6A60-459C-AC95-CDFEFA800B7C}"
+      DTS:From="Package\Load Customer Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 2"
+      DTS:To="Package\Load Emplyee Customer Calls Fact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{A6DA84B8-7F60-42ED-99B1-3817752242AD}"
+      DTS:From="Package\Load Employee Dim"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 3"
+      DTS:To="Package\Load Emplyee Customer Calls Fact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{0E4167EA-4DB0-471F-A61B-9135F3C204C3}"
+      DTS:From="Package\Load Emplyee Customer Calls Fact"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 4"
+      DTS:To="Package\Proccess Sutomer Support Cube" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{899337E0-24AD-4AA7-B286-5A0EDA004BAE}"
+      DTS:From="Package\Load Sales Fact"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение 5"
+      DTS:To="Package\Process Sales Cube" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="158,42"
+          Id="Package\Load Customer Dim"
+          TopLeft="206,59" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load Employee Dim"
+          TopLeft="381,58" />
+        <NodeLayout
+          Size="174,42"
+          Id="Package\Load Emplyee Customer Calls Fact"
+          TopLeft="308,173" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Load Product Dim"
+          TopLeft="48,58" />
+        <NodeLayout
+          Size="152,42"
+          Id="Package\Load Sales Fact"
+          TopLeft="91,175" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Proccess Sutomer Support Cube"
+          TopLeft="308,296" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Process Sales Cube"
+          TopLeft="79,295" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="118,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="49,75"
+              Start="0,0"
+              End="49,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="45,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="45,37.5"
+                    Point2="49,37.5"
+                    Point3="49,41.5" />
+                  <mssgle:LineSegment
+                    End="49,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 1]"
+          TopLeft="285,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-94,74"
+              Start="0,0"
+              End="-94,66.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.9375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.9375"
+                    Point2="0,43.9375"
+                    Point3="-4,43.9375" />
+                  <mssgle:LineSegment
+                    End="-90,43.9375" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-90,43.9375"
+                    Point2="-94,43.9375"
+                    Point3="-94,47.9375" />
+                  <mssgle:LineSegment
+                    End="-94,66.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 2]"
+          TopLeft="310,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="85,72"
+              Start="0,0"
+              End="85,64.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.2330827067669" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.2330827067669"
+                    Point2="0,29.2330827067669"
+                    Point3="4,29.2330827067669" />
+                  <mssgle:LineSegment
+                    End="81,29.2330827067669" />
+                  <mssgle:CubicBezierSegment
+                    Point1="81,29.2330827067669"
+                    Point2="85,29.2330827067669"
+                    Point3="85,33.2330827067669" />
+                  <mssgle:LineSegment
+                    End="85,64.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 3]"
+          TopLeft="461,100">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-38.3333333333334,73"
+              Start="0,0"
+              End="-38.3333333333334,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.4009111617312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.4009111617312"
+                    Point2="0,43.4009111617312"
+                    Point3="-4,43.4009111617312" />
+                  <mssgle:LineSegment
+                    End="-34.3333333333334,43.4009111617312" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-34.3333333333334,43.4009111617312"
+                    Point2="-38.3333333333334,43.4009111617312"
+                    Point3="-38.3333333333334,47.4009111617312" />
+                  <mssgle:LineSegment
+                    End="-38.3333333333334,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 4]"
+          TopLeft="392.75,215">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение 5]"
+          TopLeft="165.25,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,78"
+              Start="0,0"
+              End="0,70.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,70.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

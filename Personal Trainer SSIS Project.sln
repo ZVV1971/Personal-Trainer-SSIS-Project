@@ -7,6 +7,8 @@ Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Personal Trainer SSIS Proje
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "PersonalTrainer SSIS ProjectModel", "PersonalTrainer SSIS ProjectModel\PersonalTrainer SSIS ProjectModel.dtproj", "{3C34052E-A540-428A-8E79-40AB3BA4812C}"
 EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Lesson46", "Lesson46\Lesson46.dtproj", "{3387D899-1D8C-4265-AED4-C71E8E2F83A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -16,6 +18,8 @@ Global
 		{3D6D9753-DD6C-422C-A9C5-B45CBCC07B24}.Development|Default.Build.0 = Development
 		{3C34052E-A540-428A-8E79-40AB3BA4812C}.Development|Default.ActiveCfg = Development
 		{3C34052E-A540-428A-8E79-40AB3BA4812C}.Development|Default.Build.0 = Development
+		{3387D899-1D8C-4265-AED4-C71E8E2F83A9}.Development|Default.ActiveCfg = Development
+		{3387D899-1D8C-4265-AED4-C71E8E2F83A9}.Development|Default.Build.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

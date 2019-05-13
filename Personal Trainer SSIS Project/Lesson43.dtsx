@@ -1,0 +1,445 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2019 3:21:43 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{B74B5664-C71B-401A-8A49-F52DA8AB5D9B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson43"
+  DTS:PackageType="5"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{DCEDD101-516D-4C28-BCD8-BFFC9903011B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AW2012connection]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{DEAEC923-B90A-4680-9CA0-B4010775406E}"
+      DTS:ObjectName="AW2012connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=WIN-OC0SU9GC7II\SQLEXPRESS;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Integrated Security=True;Application Name=SSIS-Lesson43-{DEAEC923-B90A-4680-9CA0-B4010775406E}WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[FlatfileConnection]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{BFD76682-78DE-48B8-A218-8FBA87342ED3}"
+      DTS:ObjectName="FlatfileConnection">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::strFileName]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="e:\1.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Name"
+              DTS:DTSID="{697C8FA3-45A4-4854-AA2F-25E9CAE23193}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{ECA76A60-BB18-4E3B-A390-990A8B577DE1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B340BCE-C67D-466D-ADB3-87482501E3FF}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="strFileName">
+      <DTS:VariableValue
+        DTS:DataType="8">e:\1.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ForEachContainer - Lesson 43 Load Falt Files"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Контейнер &quot;Цикл по каждому элементу&quot;"
+      DTS:DTSID="{F075D6F8-46B4-462F-AB6A-EBCFFFF1B910}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ForEachContainer - Lesson 43 Load Falt Files">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{5E0966D1-9E89-49EC-8589-73DFCE18F955}"
+        DTS:ObjectName="{5E0966D1-9E89-49EC-8589-73DFCE18F955}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="E:\IIT\Projects\SSIS\Personal Trainer SSIS Project\Personal Trainer SSIS Project\Lesson43" />
+            <FEFEProperty
+              FileSpec="*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Задача потока данных"
+          DTS:DTSID="{AA0584A5-B087-4D4F-9287-8C4762DF6024}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="DFT Lesson 43 - FlatFileReading"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Источник &quot;Неструктурированный файл&quot;;Корпорация Майкрософт. Microsoft SQL Server. (C) Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support;1"
+                  description="Источник &quot;Неструктурированный файл&quot;"
+                  localeId="1033"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, считается ли, что столбцы нулевой длины имеют значение NULL."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Указывает имя файла выходного столбца, содержащего имя файла. Если не указано имя, выходной столбец, содержащий имя файла, не будет сформирован."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[FlatfileConnection]"
+                      connectionManagerRefId="Package.ConnectionManagers[FlatfileConnection]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;]"
+                      name="Выход источника &quot;Неструктурированный файл&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                          length="50"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Name]"
+                          name="Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, являются ли данные двоичными."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Преобразование"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[State]"
+                          length="50"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[State]"
+                          name="State"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, используются ли в столбце более производительные, не зависящие от локалей процедуры синтаксического анализа."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Указывает, являются ли данные двоичными."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].ExternalColumns[State]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="State" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;]"
+                      isErrorOut="true"
+                      name="Вывод ошибок источника &quot;Неструктурированный файл&quot;">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;]"
+                          name="Столбец вывода ошибок источника &quot;Неструктурированный файл&quot;" />
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Вывод ошибок источника &quot;Неструктурированный файл&quot;].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Загружает данные в базы данных, совместимые с ADO.NET, в которых используются таблицы или представления. Загружает данные в новую или существующую таблицу. Пример: использование поставщика ADO.NET для ODBC, чтобы загрузить данные в назначение ODBC.Корпорация Майкрософт (Microsoft Corporation). Microsoft SQL Server © Корпорация Майкрософт (Microsoft Corporation). Все права защищены. http://www.microsoft.com/sql/support2"
+                  description="Загружает данные в базы данных, совместимые с ADO.NET, в которых используются таблицы или представления. Загружает данные в новую или существующую таблицу. Пример: использование поставщика ADO.NET для ODBC, чтобы загрузить данные в назначение ODBC."
+                  name="Назначение ADO NET"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Имя таблицы в целевой базе данных."
+                      expressionType="Notify"
+                      name="TableOrViewName"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."ForEachLoop"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Укажите число строк в пакете. Значение по умолчанию - 0, при котором размер совпадает с внутренним буфером служб SSIS. "
+                      expressionType="Notify"
+                      name="BatchSize">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Время ожидания для выполнения команды (в секундах). Значение 0 указывает на бесконечное время работы. "
+                      expressionType="Notify"
+                      name="CommandTimeout">30</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Указывает, нужно ли использовать интерфейс SqlBulkCopy для повышения производительности операций массовой вставки. Этот интерфейс поддерживается не всеми поставщиками."
+                      expressionType="Notify"
+                      name="UseBulkInsertWhenPossible">true</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Connections[IDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[AW2012connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[AW2012connection]"
+                      description="Диспетчер управляемых соединений"
+                      name="IDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET]"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Вход назначения ADO NET">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].Columns[Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Name"
+                          externalMetadataColumnId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].ExternalColumns[Name]"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[Name]" />
+                        <inputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].Columns[State]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="State"
+                          externalMetadataColumnId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].ExternalColumns[State]"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;].Columns[State]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].ExternalColumns[Name]"
+                          dataType="wstr"
+                          length="50"
+                          name="Name" />
+                        <externalMetadataColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET].ExternalColumns[State]"
+                          dataType="wstr"
+                          length="50"
+                          name="State" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Outputs[Вывод ошибок назначения ADO NET]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Вывод ошибок назначения ADO NET"
+                      synchronousInputId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Outputs[Вывод ошибок назначения ADO NET].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Outputs[Вывод ошибок назначения ADO NET].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Outputs[Вывод ошибок назначения ADO NET].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Outputs[Вывод ошибок назначения ADO NET].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+                  endId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET.Inputs[Вход назначения ADO NET]"
+                  name="Выход источника &quot;Неструктурированный файл&quot;"
+                  startId="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source.Outputs[Выход источника &quot;Неструктурированный файл&quot;]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{566F0571-C55F-408B-B6B0-874DC573B457}"
+          DTS:ObjectName="{566F0571-C55F-408B-B6B0-874DC573B457}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::strFileName" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="176,51"
+          Id="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading"
+          TopLeft="47,19" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="266,127"
+          Size="266,170"
+          Id="Package\ForEachContainer - Lesson 43 Load Falt Files"
+          TopLeft="138,68" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Flat File Source"
+          TopLeft="195,83" />
+        <NodeLayout
+          Size="185,42"
+          Id="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET"
+          TopLeft="175,212" />
+        <EdgeLayout
+          Id="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading.Paths[Выход источника &quot;Неструктурированный файл&quot;]"
+          TopLeft="269,125">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87"
+              Start="0,0"
+              End="0,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ForEachContainer - Lesson 43 Load Falt Files\DFT Lesson 43 - FlatFileReading\Назначение ADO NET">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

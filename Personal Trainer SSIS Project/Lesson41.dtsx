@@ -1,0 +1,303 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/12/2019 12:20:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{EA849724-EE23-4D17-BB89-AB20D21E522A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson41"
+  DTS:PackageType="5"
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{58DF15D5-67B0-4E55-8F47-B9BD7E375C3C}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Seq Container1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{30E62187-5E1D-4162-B94C-33E07160B147}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Seq Container1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container1\ST1_1"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{922209D0-2716-4F83-AA30-9AA0718C2B16}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST1_1"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_0c989f9decb2459c97a79a45090ba93c"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container1\ST1_2"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{a0de96d0-63dd-40aa-a08c-6fc170e16b74}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST1_2"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_bd349fe6e7874f499ecfbb7dad48a7be"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container1\ST1_3"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{5f89a342-2f2f-4cc1-b7e9-db61b99073e8}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST1_3"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_319f175cea3d40afb0982f0b05e70ab5"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Seq Container2"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{05c91220-6782-4dc7-ab25-31412a215ca2}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Seq Container2">
+      <DTS:Variables>
+        <DTS:Variable
+          DTS:CreationName=""
+          DTS:DTSID="{8803BF54-C3F3-4A07-80B9-448320EC1573}"
+          DTS:IncludeInDebugDump="6789"
+          DTS:Namespace="User"
+          DTS:ObjectName="intVarSeqC2">
+          <DTS:VariableValue
+            DTS:DataType="3">0</DTS:VariableValue>
+        </DTS:Variable>
+      </DTS:Variables>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container2\ST2_1"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{93d715fe-bdbb-48e4-a16b-8e422698d527}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST2_1"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_876057395b144a45b27671e687190922"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp"
+              ReadOnlyVariables="User::intVarSeqC2" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container2\ST2_2"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{d1533852-98be-4435-b5e4-d6d8381e176a}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST2_2"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_abf2c8e8813841a5bed27d2606d096f9"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container2\ST2_3"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{b89dc0ad-8eaf-4537-9813-de90b71f7231}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST2_3"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_87cbe44f896440058e450e12b4e94b06"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Seq Container3"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Контейнер последовательности"
+      DTS:DTSID="{39d2d841-ff34-4837-ade5-0e76e7b46357}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Seq Container3">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container3\ST2_2"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{c7f06a90-ef45-4c54-9ae5-76abeb89b003}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST2_2"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_59b567b14159496697c2dfe3c8c5167a"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container3\ST3_1"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{8e8f392e-6d9a-4aaf-8b52-3b3a22b24ccc}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST3_1"
+          DTS:ThreadHint="7">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_4535e7326b67474b9e94f8b7ced1a3be"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Seq Container3\ST3_3"
+          DTS:CreationName="Microsoft.ScriptTask"
+          DTS:Description="Задача &quot;Скрипт&quot;"
+          DTS:DTSID="{e4a4265b-ca83-473e-9ee1-8e537b85ce54}"
+          DTS:ExecutableType="Microsoft.ScriptTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST3_3"
+          DTS:ThreadHint="8">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_8f9280947909478fb45bb6fe757d644d"
+              VSTAMajorVersion="14"
+              VSTAMinorVersion="0"
+              Language="CSharp" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container1\ST1_1"
+          TopLeft="67,16" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container1\ST1_2"
+          TopLeft="67,84" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container1\ST1_3"
+          TopLeft="67,148" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272,245"
+          Size="272,288"
+          Id="Package\Seq Container1"
+          TopLeft="48,61" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container2\ST2_1"
+          TopLeft="67,16" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container2\ST2_2"
+          TopLeft="67,84" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container2\ST2_3"
+          TopLeft="67,148" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272,245"
+          Size="272,288"
+          Id="Package\Seq Container2"
+          TopLeft="357,61" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container3\ST3_1"
+          TopLeft="67,16" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container3\ST2_2"
+          TopLeft="67,84" />
+        <NodeLayout
+          Size="109,42"
+          Id="Package\Seq Container3\ST3_3"
+          TopLeft="67,148" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272,245"
+          Size="272,288"
+          Id="Package\Seq Container3"
+          TopLeft="660,61" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

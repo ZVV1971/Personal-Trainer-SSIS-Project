@@ -1,0 +1,371 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/11/2019 12:34:24 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="WIN-OC0SU9GC7II"
+  DTS:CreatorName="WIN-OC0SU9GC7II\User"
+  DTS:DTSID="{82B5EA83-B7C8-4977-8574-8A73A48A8D3D}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.1100.123"
+  DTS:LocaleID="1049"
+  DTS:ObjectName="Lesson37"
+  DTS:PackageType="5"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{AD48E5C6-21D9-44FB-B9F6-CAF0FF490144}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121]"
+      DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"
+      DTS:DTSID="{E453CB97-6774-4B92-9C69-EBAC4779A2EF}"
+      DTS:ObjectName="WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=WIN-OC0SU9GC7II\SQLEXPRESS;Initial Catalog=E:\IIT\Projects\SSIS\AdventureWorks2012;Integrated Security=True;Application Name=SSIS-Lesson37-{E453CB97-6774-4B92-9C69-EBAC4779A2EF}WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E9A0C13A-0D8C-41C1-B8A1-20A75D64C9B0}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="CDC_State">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Задача потока данных"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Задача потока данных"
+      DTS:Disabled="True"
+      DTS:DTSID="{7740B346-52AF-4EAF-B735-9550A9E36FFE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача потока данных">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Задача потока данных\Источник CDC"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Attunity Ltd.; все права защищены; http://www.attunity.com;"
+              description="Считывает данные об изменениях из таблицы изменений SQL Server, что позволяет использовать эти данные компонентами нисходящего потока данных. Считываются только изменения в текущих диапазонах обработки данных, определенные задачей управления CDC"
+              name="Источник CDC"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.Null"
+                  description="Строковая переменная пакета служб SSIS для хранения состояния CDC, соответствующего текущему состоянию CDC."
+                  expressionType="Notify"
+                  name="StateVariable"
+                  typeConverter="Attunity.SqlServer.CDCSrc.PackageVariablesTypeConverter" />
+                <property
+                  dataType="System.Int32"
+                  description="Задает содержимое возвращаемых столбцов и строк метаданных. Режимы, которые начинаются с &quot;All&quot;, возвращают все изменения, а режимы, начинающиеся с &quot;Net&quot;, возвращают сетевые изменения."
+                  expressionType="Notify"
+                  name="CDCProcessingMode"
+                  typeConverter="Attunity.SqlServer.CDCSrc.CdcProcessingMode">2</property>
+                <property
+                  dataType="System.Null"
+                  description="The name of the CDC capture instance. By default the capture instance name is in the form of &quot;&lt;owner&gt;_&lt;table&gt;&quot;. The actual table that stores the changes is the CDC table named &quot;cdc&quot;.&quot;&lt;capture-instance&gt;_CT&quot;"
+                  expressionType="Notify"
+                  name="CaptureInstance" />
+                <property
+                  dataType="System.Int32"
+                  description="Время ожидания для выполнения команды (в секундах). Значение 0 указывает на бесконечное время ожидания."
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Если да, добавляется специальный выходной столбец с именем '__$reprocessing'. Этот выходной столбец содержит true для каждой строки данных на протяжении первоначального диапазона обработки данных или, если предыдущий запуск CDC&#xA; был прерван, не закончен. Значение по умолчанию равно false (т. е. выходной столбец '__$reprocessing' не формируется). Этот специальный выходной столбец позволяет разработчику служб SSIS неодинаково обрабатывать ошибки согласованности, в зависимости от того, ведутся ли работы на начальном диапазоне обработки, или же предыдущий запуск службы CDC был остановлен."
+                  expressionType="Notify"
+                  name="ReprocessingIndication">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Attunity.CdcSourceComponent</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Задача потока данных\Источник CDC.Connections[Connection]"
+                  name="Connection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Задача потока данных\Источник CDC.Outputs[Выход]"
+                  name="Выход">
+                  <externalMetadataColumns
+                    isUsed="True" />
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Источник CDC.Outputs[ErrorOutput]"
+                  isErrorOut="true"
+                  name="ErrorOutput">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник CDC.Outputs[ErrorOutput].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Задача потока данных\Источник CDC.Outputs[ErrorOutput].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Задача потока данных\Источник CDC.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Задача потока данных\Источник CDC.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Задача потока данных\Разделитель CDC"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Attunity Ltd.; все права защищены; http://www.attunity.com;"
+              description="Направляет поток записей о сетевых изменениях на разные выходы в зависимости от типа изменений (вставка, удаление и обновление). Это позволяет дифференцировать обработку записей о различных изменениях."
+              name="Разделитель CDC"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Attunity.CdcSplitterComponent</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]"
+                  errorOrTruncationOperation="Operation of the changed row is not a valid one"
+                  errorRowDisposition="FailComponent"
+                  name="Вход">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Задача потока данных\Разделитель CDC.Outputs[InsertOutput]"
+                  exclusionGroup="1"
+                  name="InsertOutput"
+                  synchronousInputId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Тип выхода — вставка."
+                      name="OutputType"
+                      typeConverter="Attunity.SqlServer.CDCSplit.OutputType">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Разделитель CDC.Outputs[DeleteOutput]"
+                  exclusionGroup="1"
+                  name="DeleteOutput"
+                  synchronousInputId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Тип выхода — удаление."
+                      name="OutputType"
+                      typeConverter="Attunity.SqlServer.CDCSplit.OutputType">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Разделитель CDC.Outputs[UpdateOutput]"
+                  exclusionGroup="1"
+                  name="UpdateOutput"
+                  synchronousInputId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Тип выхода — обновление."
+                      name="OutputType"
+                      typeConverter="Attunity.SqlServer.CDCSplit.OutputType">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Задача потока данных\Разделитель CDC.Outputs[ErrorOutput]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ErrorOutput"
+                  synchronousInputId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Тип выхода — ошибка."
+                      name="OutputType"
+                      typeConverter="Attunity.SqlServer.CDCSplit.OutputType">3</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Задача потока данных\Разделитель CDC.Outputs[ErrorOutput].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Задача потока данных\Разделитель CDC.Outputs[ErrorOutput].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Задача потока данных\Разделитель CDC.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Задача потока данных\Разделитель CDC.Outputs[ErrorOutput].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Задача потока данных.Paths[Выход]"
+              endId="Package\Задача потока данных\Разделитель CDC.Inputs[Вход]"
+              name="Выход"
+              startId="Package\Задача потока данных\Источник CDC.Outputs[Выход]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Задача управления CDC"
+      DTS:CreationName="Attunity.CdcControlTask"
+      DTS:Description="Задача управления CDC"
+      DTS:Disabled="True"
+      DTS:DTSID="{2F64910A-2C1C-4B77-87DE-86B396607232}"
+      DTS:ExecutableType="Attunity.CdcControlTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Задача управления CDC"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <CDCControlTask
+          Connection="WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121"
+          TaskOperation="MarkInitialLoadStart"
+          OperationParameter=""
+          StateConnection="WIN-OC0SU9GC7II\SQLEXPRESS.E:\IIT\Projects\SSIS\AdventureWorks20121"
+          StateVariable="User::CDC_State"
+          AutomaticStatePersistence="True"
+          StateName="CDC_State"
+          StateTable="[dbo].[cdc_states]"
+          CommandTimeout="30"
+          ChangeDetectionRetryInterval="10"
+          ChangeDetectionTimeout="60" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Ограничение]"
+      DTS:CreationName=""
+      DTS:DTSID="{078ADA8C-AEB9-437A-805C-5D6626828FD8}"
+      DTS:From="Package\Задача управления CDC"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Ограничение"
+      DTS:To="Package\Задача потока данных" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--В данном разделе CDATA содержатся сведения о макете пакета. В данном разделе содержатся сведения о координатах (x,y), ширине и высоте.-->
+<!--В случае возникновения ошибки при редактировании этого раздела вручную его можно удалить. -->
+<!--Пакет можно загрузить обычным образом, но прежние сведения о макете будут утеряны, и конструктор автоматически перераспределит элементы в области конструктора.-->
+<Objects
+  Version="8">
+  <!--Все приведенные ниже узлы будут содержать свойства, не влияющие на поведение среды выполнения.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="198,42"
+          Id="Package\Задача управления CDC"
+          TopLeft="106,60" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Задача потока данных"
+          TopLeft="114.5,162.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Ограничение]"
+          TopLeft="207.25,102">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.5"
+              Start="0,0"
+              End="0,53">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Задача потока данных">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Задача потока данных\Источник CDC"
+          TopLeft="191,79" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Задача потока данных\Разделитель CDC"
+          TopLeft="193,206" />
+        <EdgeLayout
+          Id="Package\Задача потока данных.Paths[Выход]"
+          TopLeft="265,121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10,85"
+              Start="0,0"
+              End="10,77.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.5"
+                    Point2="0,42.5"
+                    Point3="4,42.5" />
+                  <mssgle:LineSegment
+                    End="6,42.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6,42.5"
+                    Point2="10,42.5"
+                    Point3="10,46.5" />
+                  <mssgle:LineSegment
+                    End="10,77.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
